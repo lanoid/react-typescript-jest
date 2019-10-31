@@ -18,4 +18,13 @@ Parcel will attempt to run the project on http://localhost:1234
 
 ### Considerations
 
+SImple folder structure sets you up for success
+
+- src
+    - components
+    - data
+    - helpers
+    - style
+    - types
+
 This simple set up suits me down to the ground, so I can rapidly develop small projects - Reduce, Reuse, Recycle.
