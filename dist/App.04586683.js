@@ -31776,7 +31776,7 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"../node_modules/react-dom/cjs/react-dom.development.js"}],"components/FunctionalComponent.tsx":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"../node_modules/react-dom/cjs/react-dom.development.js"}],"contexts/SimpleContext.tsx":[function(require,module,exports) {
 "use strict";
 
 var __importStar = this && this.__importStar || function (mod) {
@@ -31795,15 +31795,50 @@ Object.defineProperty(exports, "__esModule", {
 
 var React = __importStar(require("react"));
 
+exports.default = React.createContext({
+  userId: "XXX"
+});
+},{"react":"../node_modules/react/index.js"}],"components/FunctionalComponent.tsx":[function(require,module,exports) {
+"use strict";
+
+var __importStar = this && this.__importStar || function (mod) {
+  if (mod && mod.__esModule) return mod;
+  var result = {};
+  if (mod != null) for (var k in mod) {
+    if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+  }
+  result["default"] = mod;
+  return result;
+};
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var React = __importStar(require("react"));
+
+var SimpleContext_1 = __importDefault(require("../contexts/SimpleContext"));
+
 var FunctionalComponent = function FunctionalComponent(props) {
-  return React.createElement("p", null, "How are you ", props.name, "?");
+  return React.createElement(SimpleContext_1.default.Consumer, null, function (_a) {
+    var userId = _a.userId;
+    return React.createElement("p", {
+      id: userId
+    }, "How are you ", props.name, "?");
+  });
 };
 
 FunctionalComponent.defaultProps = {
   name: "lanoid"
 };
 exports.default = FunctionalComponent;
-},{"react":"../node_modules/react/index.js"}],"helpers/helper.ts":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","../contexts/SimpleContext":"contexts/SimpleContext.tsx"}],"helpers/helper.ts":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31868,6 +31903,8 @@ var FunctionalComponent_1 = __importDefault(require("./FunctionalComponent"));
 
 var helper_1 = __importDefault(require("../helpers/helper"));
 
+var SimpleContext_1 = __importDefault(require("../contexts/SimpleContext"));
+
 ;
 
 var Component =
@@ -31882,7 +31919,11 @@ function (_super) {
   Component.prototype.render = function () {
     var hello = this.props.hello;
     var greeting = helper_1.default();
-    return React.createElement("div", null, React.createElement("h1", null, greeting, " ", hello), React.createElement(FunctionalComponent_1.default, null));
+    return React.createElement(SimpleContext_1.default.Provider, {
+      value: {
+        userId: "LAN01D"
+      }
+    }, React.createElement("div", null, React.createElement("h1", null, greeting, " ", hello), React.createElement(FunctionalComponent_1.default, null)));
   };
 
   Component.defaultProps = {
@@ -31892,7 +31933,7 @@ function (_super) {
 }(React.Component);
 
 exports.default = Component;
-},{"react":"../node_modules/react/index.js","./FunctionalComponent":"components/FunctionalComponent.tsx","../helpers/helper":"helpers/helper.ts"}],"App.tsx":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./FunctionalComponent":"components/FunctionalComponent.tsx","../helpers/helper":"helpers/helper.ts","../contexts/SimpleContext":"contexts/SimpleContext.tsx"}],"App.tsx":[function(require,module,exports) {
 "use strict";
 
 var __importStar = this && this.__importStar || function (mod) {

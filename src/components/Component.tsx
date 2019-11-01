@@ -1,6 +1,7 @@
 import * as React from 'react';
 import FunctionalComponent from './FunctionalComponent';
 import helper from '../helpers/helper';
+import SimpleContext from '../contexts/SimpleContext';
 
 interface Props {
     hello: string;
@@ -17,10 +18,16 @@ export default class Component extends React.Component<Props> {
         const greeting = helper();
         
         return (
-            <div>
-                <h1>{greeting} {hello}</h1>
-                <FunctionalComponent />
-            </div>
+            <SimpleContext.Provider value={
+                {
+                    userId: "LAN01D"
+                }
+            }>
+                <div>
+                    <h1>{greeting} {hello}</h1>
+                    <FunctionalComponent />
+                </div>
+            </SimpleContext.Provider>
         )
     }
 }
