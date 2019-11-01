@@ -6,11 +6,7 @@ interface Props {
 }
 
 const FunctionalComponent: React.FunctionComponent<Props> = (props) => {
- return <SimpleContext.Consumer>{
-        ({ userId }) => {
-            return <p id={userId}>How are you {props.name}?</p>
-        }
-    }</SimpleContext.Consumer>;
+    return <SimpleContext.Consumer>{({ userId }) => { return <p id={userId}>How are you {props.name}?</p>}}</SimpleContext.Consumer>
 }
 
 FunctionalComponent.defaultProps = {
