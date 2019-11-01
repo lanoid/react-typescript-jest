@@ -20,7 +20,7 @@ Parcel will attempt to run the project on http://localhost:1234
 
 ### Considerations
 
-SImple folder structure sets you up for success
+Simple folder structure sets you up for success
 
 - [src](https://github.com/lanoid/react-typescript-jest/tree/master/src)
     - [components](https://github.com/lanoid/react-typescript-jest/tree/master/src/components)
@@ -28,5 +28,4 @@ SImple folder structure sets you up for success
     - [helpers](https://github.com/lanoid/react-typescript-jest/tree/master/src/helpers)
     - [style](https://github.com/lanoid/react-typescript-jest/tree/master/src/style)
     - [types](https://github.com/lanoid/react-typescript-jest/tree/master/src/types)
-
-This simple set up suits me down to the ground, so I can rapidly develop small projects - Reduce, Reuse, Recycle.
+    - [contexts](https://github.com/lanoid/react-typescript-jest/tree/master/src/contexts)
