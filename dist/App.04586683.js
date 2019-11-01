@@ -31776,7 +31776,34 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"../node_modules/react-dom/cjs/react-dom.development.js"}],"helpers/helper.ts":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"../node_modules/react-dom/cjs/react-dom.development.js"}],"components/FunctionalComponent.tsx":[function(require,module,exports) {
+"use strict";
+
+var __importStar = this && this.__importStar || function (mod) {
+  if (mod && mod.__esModule) return mod;
+  var result = {};
+  if (mod != null) for (var k in mod) {
+    if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+  }
+  result["default"] = mod;
+  return result;
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var React = __importStar(require("react"));
+
+var FunctionalComponent = function FunctionalComponent(props) {
+  return React.createElement("p", null, "How are you ", props.name, "?");
+};
+
+FunctionalComponent.defaultProps = {
+  name: "lanoid"
+};
+exports.default = FunctionalComponent;
+},{"react":"../node_modules/react/index.js"}],"helpers/helper.ts":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31837,6 +31864,8 @@ Object.defineProperty(exports, "__esModule", {
 
 var React = __importStar(require("react"));
 
+var FunctionalComponent_1 = __importDefault(require("./FunctionalComponent"));
+
 var helper_1 = __importDefault(require("../helpers/helper"));
 
 ;
@@ -31853,7 +31882,7 @@ function (_super) {
   Component.prototype.render = function () {
     var hello = this.props.hello;
     var greeting = helper_1.default();
-    return React.createElement("div", null, React.createElement("h1", null, greeting, " ", hello));
+    return React.createElement("div", null, React.createElement("h1", null, greeting, " ", hello), React.createElement(FunctionalComponent_1.default, null));
   };
 
   Component.defaultProps = {
@@ -31863,7 +31892,7 @@ function (_super) {
 }(React.Component);
 
 exports.default = Component;
-},{"react":"../node_modules/react/index.js","../helpers/helper":"helpers/helper.ts"}],"App.tsx":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./FunctionalComponent":"components/FunctionalComponent.tsx","../helpers/helper":"helpers/helper.ts"}],"App.tsx":[function(require,module,exports) {
 "use strict";
 
 var __importStar = this && this.__importStar || function (mod) {
@@ -31921,7 +31950,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51916" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62891" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

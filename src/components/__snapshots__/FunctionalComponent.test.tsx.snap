@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FunctionalComponent matches snapshot 1`] = `
+<p>
+  How are you 
+  lanoid
+  ?
+</p>
+`;

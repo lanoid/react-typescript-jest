@@ -1,4 +1,5 @@
 import * as React from 'react';
+import FunctionalComponent from './FunctionalComponent';
 import helper from '../helpers/helper';
 
 interface Props {
@@ -18,6 +19,7 @@ export default class Component extends React.Component<Props> {
         return (
             <div>
                 <h1>{greeting} {hello}</h1>
+                <FunctionalComponent />
             </div>
         )
     }

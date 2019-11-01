@@ -3,9 +3,9 @@ import { shallow } from 'enzyme';
 import Component from './Component';
 
 describe('Component', () => {
-    const year = shallow(<Component />);
+    const component = shallow(<Component />);
     
     it('matches snapshot', () => {
-        expect(year).toMatchSnapshot();
+        expect(component).toMatchSnapshot();
     });
 });
