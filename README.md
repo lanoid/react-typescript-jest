@@ -1,6 +1,6 @@
 # Boilerplate Project
 
-A simple boilerplate project which allows rapid creation of react projects with typescript/jest/enzyme/sass. All compiled using [parceljs](https://parceljs.org/).
+A simple, personally educational boilerplate project which allows rapid creation of react projects with typescript/jest/enzyme/sass. All compiled using [parceljs](https://parceljs.org/).
 
 _I don’t often boilerplate, but when I do, it’s light._
 
