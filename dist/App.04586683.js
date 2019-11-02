@@ -31848,7 +31848,78 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = function () {
   return 'Hello';
 };
-},{}],"components/Component.tsx":[function(require,module,exports) {
+},{}],"hooks/WindowWidth.tsx":[function(require,module,exports) {
+"use strict";
+
+var __importStar = this && this.__importStar || function (mod) {
+  if (mod && mod.__esModule) return mod;
+  var result = {};
+  if (mod != null) for (var k in mod) {
+    if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+  }
+  result["default"] = mod;
+  return result;
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var React = __importStar(require("react"));
+
+var useWindowWidth = function useWindowWidth() {
+  var _a = React.useState(window.innerWidth),
+      width = _a[0],
+      setWidth = _a[1];
+
+  React.useEffect(function () {
+    var handleResize = function handleResize() {
+      return setWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return function () {
+      window.removeEventListener('resize', handleResize);
+    };
+  });
+  return width;
+};
+
+exports.default = useWindowWidth;
+},{"react":"../node_modules/react/index.js"}],"components/FunctionalHook.tsx":[function(require,module,exports) {
+"use strict";
+
+var __importStar = this && this.__importStar || function (mod) {
+  if (mod && mod.__esModule) return mod;
+  var result = {};
+  if (mod != null) for (var k in mod) {
+    if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+  }
+  result["default"] = mod;
+  return result;
+};
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var React = __importStar(require("react"));
+
+var WindowWidth_1 = __importDefault(require("../hooks/WindowWidth"));
+
+var FunctionalHook = function FunctionalHook() {
+  var width = WindowWidth_1.default();
+  return React.createElement("div", null, width);
+};
+
+exports.default = FunctionalHook;
+},{"react":"../node_modules/react/index.js","../hooks/WindowWidth":"hooks/WindowWidth.tsx"}],"components/Component.tsx":[function(require,module,exports) {
 "use strict";
 
 var __extends = this && this.__extends || function () {
@@ -31905,6 +31976,8 @@ var helper_1 = __importDefault(require("../helpers/helper"));
 
 var SimpleContext_1 = __importDefault(require("../contexts/SimpleContext"));
 
+var FunctionalHook_1 = __importDefault(require("./FunctionalHook"));
+
 ;
 
 var Component =
@@ -31923,7 +31996,7 @@ function (_super) {
       value: {
         userId: "LAN01D"
       }
-    }, React.createElement("div", null, React.createElement("h1", null, greeting, " ", hello), React.createElement(FunctionalComponent_1.default, null)));
+    }, React.createElement("div", null, React.createElement("h1", null, greeting, " ", hello), React.createElement(FunctionalComponent_1.default, null)), React.createElement(FunctionalHook_1.default, null));
   };
 
   Component.defaultProps = {
@@ -31933,7 +32006,7 @@ function (_super) {
 }(React.Component);
 
 exports.default = Component;
-},{"react":"../node_modules/react/index.js","./FunctionalComponent":"components/FunctionalComponent.tsx","../helpers/helper":"helpers/helper.ts","../contexts/SimpleContext":"contexts/SimpleContext.tsx"}],"App.tsx":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./FunctionalComponent":"components/FunctionalComponent.tsx","../helpers/helper":"helpers/helper.ts","../contexts/SimpleContext":"contexts/SimpleContext.tsx","./FunctionalHook":"components/FunctionalHook.tsx"}],"App.tsx":[function(require,module,exports) {
 "use strict";
 
 var __importStar = this && this.__importStar || function (mod) {
@@ -31991,7 +32064,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62891" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50915" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

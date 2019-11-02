@@ -2,6 +2,7 @@ import * as React from 'react';
 import FunctionalComponent from './FunctionalComponent';
 import helper from '../helpers/helper';
 import SimpleContext from '../contexts/SimpleContext';
+import FunctionalHook from './FunctionalHook';
 
 interface Props {
     hello: string;
@@ -27,6 +28,7 @@ export default class Component extends React.Component<Props> {
                     <h1>{greeting} {hello}</h1>
                     <FunctionalComponent />
                 </div>
+                <FunctionalHook />
             </SimpleContext.Provider>
         )
     }
