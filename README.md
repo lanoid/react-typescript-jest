@@ -24,8 +24,9 @@ Simple folder structure sets you up for success
 
 - [src](https://github.com/lanoid/react-typescript-jest/tree/master/src)
     - [components](https://github.com/lanoid/react-typescript-jest/tree/master/src/components)
+    - [contexts](https://github.com/lanoid/react-typescript-jest/tree/master/src/contexts)
     - [data](https://github.com/lanoid/react-typescript-jest/tree/master/src/data)
     - [helpers](https://github.com/lanoid/react-typescript-jest/tree/master/src/helpers)
+    - [hooks](ttps://github.com/lanoid/react-typescript-jest/tree/master/src/hooks)
     - [style](https://github.com/lanoid/react-typescript-jest/tree/master/src/style)
     - [types](https://github.com/lanoid/react-typescript-jest/tree/master/src/types)
-    - [contexts](https://github.com/lanoid/react-typescript-jest/tree/master/src/contexts)
