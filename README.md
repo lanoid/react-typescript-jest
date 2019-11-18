@@ -8,11 +8,11 @@ _I don’t often boilerplate, but when I do, it’s light._
 
 `npm i`
 
-Parcel will attempt to run the project on http://localhost:1234
-
 ## Run
 
 `npm run dev`
+
+Parcel will attempt to run the project on http://localhost:1234
 
 ## Test
 
